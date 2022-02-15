@@ -18,7 +18,7 @@ services:
       - hub
     environment:
       - HUB_HOST=hub
-  search-module-1:
+  search-module:
     image: sumitdockerspace/selenium-docker
     depends_on:
       - chrome
@@ -28,19 +28,8 @@ services:
       - HUB_HOST=hub
       - MODULE=searchmodule.xml
     volumes:
-      - ./searchmodule-1-result:/usr/sumit/docker-selenium/test-output
-  search-module-2:
-    image: sumitdockerspace/selenium-docker
-    depends_on:
-      - chrome
-      - firefox
-    environment:
-      - BROWSER=chrome
-      - HUB_HOST=hub
-      - MODULE=searchmodule.xml
-    volumes:
-      - ./searchmodule-2-result:/usr/sumit/docker-selenium/test-output
-  bookflight-1-module:
+      - ./searchmodule-result:/usr/sumit/docker-selenium/test-output
+  bookflight-module:
     image: sumitdockerspace/selenium-docker
     depends_on:
       - chrome
@@ -50,15 +39,4 @@ services:
       - HUB_HOST=hub
       - MODULE=bookflightmodule.xml
     volumes:
-      - ./bookflight-1-result:/usr/sumit/docker-selenium/test-output
-  bookflight-module-2:
-    image: sumitdockerspace/selenium-docker
-    depends_on:
-      - chrome
-      - firefox
-    environment:
-      - BROWSER=firefox
-      - HUB_HOST=hub
-      - MODULE=bookflightmodule.xml
-    volumes:
-      - ./bookflight-2-result:/usr/sumit/docker-selenium/test-output
+      - ./bookflight-result:/usr/sumit/docker-selenium/test-output
