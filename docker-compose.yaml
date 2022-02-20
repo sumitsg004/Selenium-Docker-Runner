@@ -28,7 +28,7 @@ services:
       - HUB_HOST=hub
       - MODULE=searchmodule.xml
     volumes:
-      - ./searchmodule-result:/usr/sumit/docker-selenium/test-output
+      - ./output/searchmodule-result:/usr/sumit/docker-selenium/test-output
   bookflight-module:
     image: sumitdockerspace/selenium-docker
     depends_on:
@@ -39,4 +39,4 @@ services:
       - HUB_HOST=hub
       - MODULE=bookflightmodule.xml
     volumes:
-      - ./bookflight-result:/usr/sumit/docker-selenium/test-output
+      - ./output/bookflight-result:/usr/sumit/docker-selenium/test-output
